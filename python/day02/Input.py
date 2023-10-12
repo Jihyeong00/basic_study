@@ -1,0 +1,11 @@
+# 두개의 정수를 입력을 받아 사칙 연산을 하는 프로그램
+first_number = input("첫 번째 정수를 입력하시오 :")
+second_number = input("두 번째 정수를 입력하시오 :")
+sum_result = str(int(first_number) + int(second_number))
+minus_result = str(int(first_number) - int(second_number))
+multiple_result = str(int(first_number) * int(second_number))
+divide_result = str(int(first_number) / int(second_number))
+print(first_number + " + " + second_number + " = " + sum_result)
+print(first_number + " - " + second_number + " = " + minus_result)
+print(first_number + " * " + second_number + " = " + multiple_result)
+print(first_number + " / " + second_number + " = " + divide_result)
