@@ -24,6 +24,7 @@ def move_position(x, y):
 
 
 def make_figure(figure_color, width, count):
+    move_position(-(width / 2), -(width / 2))
     t.left(0)
     t.fillcolor(figure_color)
     t.begin_fill()
@@ -43,7 +44,8 @@ def make_circle(circle_size, circle_color):
 def set_figure_type():
     num_input = int(t.textinput("", "도형을 어떻게 그릴까요? 0 ~ 8중 1, 2, 7을 제외한 숫자를 입력할 수 있습니다."))
     if num_input in ERROR_NUMBER:
-        return "[ERROR]"
+        print("[ERROR]")
+        return set_figure_type()
     if num_input == 0:
         return "circle"
     return num_input
@@ -67,15 +69,12 @@ def play():
     color = set_color_type()
     size = set_size()
 
-    if figure_type == "[ERROR]":
-        return
-
     if figure_type == 0:
-        return make_circle(size, color)
-
-    return make_figure(color, size, figure_type)
+        make_circle(size, color)
+    else:
+        make_figure(color, size, figure_type)
+    t.done()
 
 
 play()
 
-t.done()

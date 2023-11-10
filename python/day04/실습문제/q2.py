@@ -13,7 +13,7 @@ def get_student_info():
 
 def get_student_list(items):
     print("=================================================")
-    print(f"%s\t%s\t%s\t%s\t%s\t%s" % ("성명", "국어", "영어", "수학", "총점", "평균"))
+    print(f"%10s%3s%3s%3s%5s%5s" % ("성명", "국어", "영어", "수학", "총점", "평균"))
 
     items_length = len(items)
 
@@ -25,8 +25,8 @@ def get_student_list(items):
         kor_sum += items[i][1]
         eng_sum += items[i][2]
         math_sum += items[i][3]
-        print("%s\t%d\t%d\t%d\t%d\t%d" % (
-            items[i][0], items[i][1], items[i][2], items[i][3], items[i][4], items[i][5]))
+        print(f"%10s%3s%3s%3s%5s%5s" % (
+            items[i][0], str(items[i][1]), str(items[i][2]), str(items[i][3]), str(items[i][4]), str(items[i][5])))
 
     print("=================================================")
 
